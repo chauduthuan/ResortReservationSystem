@@ -1,0 +1,30 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-10-29 07:22:29 --> Severity: Notice  --> Undefined variable: error C:\xampp\htdocs\hotel\application\views\login.php 11
+ERROR - 2017-10-29 07:22:32 --> Severity: Notice  --> Undefined index: roomservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 16
+ERROR - 2017-10-29 07:22:32 --> Severity: Notice  --> Undefined index: restaurant C:\xampp\htdocs\hotel\application\views\welcome_message.php 19
+ERROR - 2017-10-29 07:22:33 --> Severity: Notice  --> Undefined index: sport C:\xampp\htdocs\hotel\application\views\welcome_message.php 22
+ERROR - 2017-10-29 07:22:33 --> Severity: Notice  --> Undefined index: medicalservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 25
+ERROR - 2017-10-29 07:22:33 --> Severity: Notice  --> Undefined index: laundry C:\xampp\htdocs\hotel\application\views\welcome_message.php 29
+ERROR - 2017-10-29 07:22:33 --> Severity: Notice  --> Undefined index: massage C:\xampp\htdocs\hotel\application\views\welcome_message.php 32
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: roomservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 16
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: restaurant C:\xampp\htdocs\hotel\application\views\welcome_message.php 19
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: sport C:\xampp\htdocs\hotel\application\views\welcome_message.php 22
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: medicalservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 25
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: laundry C:\xampp\htdocs\hotel\application\views\welcome_message.php 29
+ERROR - 2017-10-29 07:26:01 --> Severity: Notice  --> Undefined index: massage C:\xampp\htdocs\hotel\application\views\welcome_message.php 32
+ERROR - 2017-10-29 07:26:03 --> Severity: Notice  --> Undefined variable: error C:\xampp\htdocs\hotel\application\views\login.php 11
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: roomservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 16
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: restaurant C:\xampp\htdocs\hotel\application\views\welcome_message.php 19
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: sport C:\xampp\htdocs\hotel\application\views\welcome_message.php 22
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: medicalservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 25
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: laundry C:\xampp\htdocs\hotel\application\views\welcome_message.php 29
+ERROR - 2017-10-29 07:26:10 --> Severity: Notice  --> Undefined index: massage C:\xampp\htdocs\hotel\application\views\welcome_message.php 32
+ERROR - 2017-10-29 08:19:08 --> Severity: Notice  --> Undefined variable: customer_id C:\xampp\htdocs\hotel\application\views\reservation\list.php 15
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: roomservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 16
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: restaurant C:\xampp\htdocs\hotel\application\views\welcome_message.php 19
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: sport C:\xampp\htdocs\hotel\application\views\welcome_message.php 22
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: medicalservice C:\xampp\htdocs\hotel\application\views\welcome_message.php 25
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: laundry C:\xampp\htdocs\hotel\application\views\welcome_message.php 29
+ERROR - 2017-10-29 08:36:49 --> Severity: Notice  --> Undefined index: massage C:\xampp\htdocs\hotel\application\views\welcome_message.php 32
+ERROR - 2017-10-29 08:36:56 --> Severity: Notice  --> Undefined variable: customer_id C:\xampp\htdocs\hotel\application\views\reservation\list.php 15
