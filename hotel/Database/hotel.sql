@@ -20,6 +20,12 @@ CREATE TABLE IF NOT EXISTS `customer_payment` (
 	`creditcard_id` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+-- Modify customer table
+ALTER TABLE `customer` 
+	ADD UNIQUE(`customer_email`),
+	ADD INDEX(`customer_email`);
+
+
 ALTER TABLE `customer_payment`
-	ADD CONSTRAINT `customer_payment_creditcard_id_fk` FOREIGN KEY `creditcard_id` REFERENCES `creditcard` (`creditcard_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	ADD CONSTRAINT `customer_payment_customer_email_fk` FOREIGN KEY `customer_email` REFERENCES `customer` (`customer_email`) ON DELETE CASCADE ON UPDATE CASCADE;
+	ADD CONSTRAINT `customer_payment_creditcard_id_fk` FOREIGN KEY (`creditcard_id`) REFERENCES `creditcard` (`creditcard_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT `customer_payment_customer_email_fk` FOREIGN KEY (`customer_email`) REFERENCES `customer` (`customer_email`) ON DELETE CASCADE ON UPDATE CASCADE;
