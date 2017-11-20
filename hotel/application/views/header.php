@@ -54,7 +54,7 @@
               <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo base_url('room'); ?>">Rooms</a></li>
-                  <li><a href="<?php echo base_url('room-type'); ?>">Room Types</a></li>
+                  <li><a href="<?php echo base_url('room_type'); ?>">Room Types</a></li>
                 </ul>
               </li>
 
