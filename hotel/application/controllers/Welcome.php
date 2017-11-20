@@ -18,8 +18,25 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function check_login()
+	{
+		if(!UID)
+			redirect("login");
+	}
+
 	public function index()
 	{
+		// Necessary to load this helper otherwise there will be an undefined call to base_url()
+		$this->load->helper('url');
+
+		//$this->check_login();
+		echo("<script>console.log('Post check(): ".json_encode(UID)."');</script>");
+
+		$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard');
+
+		$this->load->view('header', $data);
 		$this->load->view('welcome_message');
+		$this->load->view('footer');
 	}
 }

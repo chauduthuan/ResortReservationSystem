@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('HOTEL_NAME', "Borrego Springs Resort");
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
