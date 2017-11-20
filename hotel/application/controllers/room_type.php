@@ -91,7 +91,8 @@ class Room_type extends CI_Controller {
 
 		$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room_type');
 		$this->load->view('header', $data);
-		$this->load->view('room-type/info',$viewdata);
+		//$this->load->view('room-type/info',$viewdata);
+		$this->load->view('room-type/info');
 		$this->load->view('footer');
 	}
 }

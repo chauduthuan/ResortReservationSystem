@@ -32,7 +32,8 @@ class Hikes extends CI_Controller {
 
 		$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'hikes');
 		$this->load->view('header', $data);
-		$this->load->view('hikes/info',$viewdata);
+		//$this->load->view('hikes/info',$viewdata);
+		$this->load->view('hikes/info');
 		$this->load->view('footer');
 	}
 }

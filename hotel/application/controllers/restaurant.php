@@ -85,7 +85,8 @@ class Restaurant extends CI_Controller {
 
 		$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'restaurant');
 		$this->load->view('header', $data);
-		$this->load->view('restaurant/info',$viewdata);
+		//$this->load->view('restaurant/info',$viewdata);
+		$this->load->view('restaurant/info');
 		$this->load->view('footer');
 	}
 }

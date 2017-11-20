@@ -67,7 +67,8 @@ class Reservation extends CI_Controller {
 		//$viewdata = array('room_types' => $room_types);
 		$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
 		$this->load->view('header', $data);
-		$this->load->view('reservation/info', $viewdata);
+		//$this->load->view('reservation/info', $viewdata);
+		$this->load->view('reservation/info');
 		$this->load->view('footer');
 	}
 	public function make()
