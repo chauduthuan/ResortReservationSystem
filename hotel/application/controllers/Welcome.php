@@ -31,7 +31,7 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 
 		//$this->check_login();
-		//echo("<script>console.log('Post check(): ".json_encode(UID)."');</script>");
+		echo("<script>console.log('Post check(): ".json_encode(UID)."');</script>");
 
 		$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard');
 
