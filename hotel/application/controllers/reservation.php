@@ -26,6 +26,19 @@ class Reservation extends CI_Controller {
 
 	public function check($ref="") {
 		$post = $this->input->post();
+
+		echo("<script>console.log('post(): ".json_encode($post)."');</script>");	
+
+		echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
+		if($this->session->userdata('useSessionData') == true)
+		{
+			echo("<script>console.log('useSessionData == true');</script>");
+			$post['room_type'] = $this->session->userdata('room_type');
+			$post['room_id'] = $this->session->userdata('room_id');
+			$post['checkin_date'] = $this->session->userdata('checkin_date');
+			$post['checkout_date'] = $this->session->userdata('checkout_date');
+		}
+
 		//$customer = $this->customer_m->get_customer($post['customer_TCno']);
 		$viewdata = array();
 
@@ -73,15 +86,32 @@ class Reservation extends CI_Controller {
 	}
 	public function make()
 	{
-		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");	
+		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
 		if(!UID)
 		{
-			$this->login(); // If user is not logged in, redirect to login page
+			$post = $this->input->post();
+			$this->session->set_userdata($post);
+			$this->session->set_userdata(array('useSessionData' => true));
+			echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
+			$this->reservation_login(); // If user is not logged in, redirect to login page
 		}
 		else
 		{
 			// If user is logged in, make reservation
 			$post = $this->input->post();
+
+			if($this->session->userdata('useSessionData') == true)
+		{
+			echo("<script>console.log('useSessionData == true');</script>");
+			$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			echo("<script>console.log('customer tc no: ".json_encode($post['customer_TCno'])."');</script>");
+			$data['room_id'] = $this->session->userdata('room_id');
+			$post['checkin_date'] = $this->session->userdata('checkin_date');
+			$post['checkout_date'] = $this->session->userdata('checkout_date');
+			$post['room_type'] = $this->session->userdata('room_type');
+			$post['room_id'] = $this->session->userdata('room_id');
+
+		}
 
 			$customer = $this->customer_m->get_customer($post['customer_TCno']);
 			$customer = $customer[0];
@@ -113,7 +143,7 @@ class Reservation extends CI_Controller {
 		}
 	}
 
-    public function login() {
+    public function reservation_login() {
         $viewdata = array();
 
         if ($this->input->post("username") && $this->input->post("password")) {
@@ -121,14 +151,14 @@ class Reservation extends CI_Controller {
             $password = $this->input->post("password");
             if ($user = $this->user_m->check_login($username, $password)) {
                 $this->user_l->login($user);
-                redirect(base_url() . "welcome/index");
+                redirect(base_url() . "reservation/make");
             } else {
                 $viewdata["error"] = true;
             }
         }
 		$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
         $this->load->view('header', $data);
-        $this->load->view('login', $viewdata);
+        $this->load->view('reservation/login', $viewdata);
         $this->load->view('footer');
     }
 
