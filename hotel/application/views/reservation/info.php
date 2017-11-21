@@ -2,7 +2,7 @@
   <div class="main-inner">
     <div class="container">
       <div class="span4">
-        <a href="<?php echo base_url(); ?>customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>
+        <!--<a href="<?php echo base_url(); ?>customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>-->
 
         <div class="account-container">
           
