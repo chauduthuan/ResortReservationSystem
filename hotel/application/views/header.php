@@ -69,5 +69,36 @@
         </div>
         <!-- /subnavbar-inner --> 
       </div>
-<? } ?>
+<? } elseif(UID)
+{ ?>
+        <div class="subnavbar">
+        <div class="subnavbar-inner">
+          <div class="container">
+            <ul class="mainnav">
+              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
+              
+              <!-- Employee Tab
+              <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('employee'); ?>"><i class="icon-user"></i><span>Employees</span> </a> </li>
+              -->
+
+              <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
+              <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('room'); ?>">Rooms</a></li>
+                  <li><a href="<?php echo base_url('room_type'); ?>">Room Types</a></li>
+                </ul>
+              </li>
+
+              <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('restaurant'); ?>"><i class="icon-fire"></i><span>Restaurant</span> </a> </li>
+              
+              <li <? if($page == "hikes"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('hikes'); ?>"><i class="icon-retweet"></i><span>Hikes and Rentals</span> </a> </li>
+
+              <li></li> <!-- This is to add a bar at the end of the last item for the tabs-->
+            </ul>
+          </div>
+          <!-- /container --> 
+        </div>
+        <!-- /subnavbar-inner --> 
+      </div>
+ <? } ?>
 <!-- /subnavbar -->
