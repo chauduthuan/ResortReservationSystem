@@ -110,7 +110,7 @@ class Reservation extends CI_Controller {
 			$post['checkout_date'] = $this->session->userdata('checkout_date');
 			$post['room_type'] = $this->session->userdata('room_type');
 			$post['room_id'] = $this->session->userdata('room_id');
-
+			$this->session->set_userData(array('useSessionData' => false));
 		}
 
 			$customer = $this->customer_m->get_customer($post['customer_TCno']);
@@ -151,6 +151,10 @@ class Reservation extends CI_Controller {
             $password = $this->input->post("password");
             if ($user = $this->user_m->check_login($username, $password)) {
                 $this->user_l->login($user);
+                // get the customer_TCno when they log in
+                $this->session->set_userdata(array('customer_TCno' => 1));
+				//$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+                //$this->load->view('header', $data);
                 redirect(base_url() . "reservation/make");
             } else {
                 $viewdata["error"] = true;
