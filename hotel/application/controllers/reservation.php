@@ -26,12 +26,26 @@ class Reservation extends CI_Controller {
 
 	public function check($ref="") {
 		$post = $this->input->post();
-		$customer = $this->customer_m->get_customer($post['customer_TCno']);
+
+		echo("<script>console.log('post(): ".json_encode($post)."');</script>");	
+
+		echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
+		if($this->session->userdata('useSessionData') == true)
+		{
+			echo("<script>console.log('useSessionData == true');</script>");
+			$post['room_type'] = $this->session->userdata('room_type');
+			$post['room_id'] = $this->session->userdata('room_id');
+			$post['checkin_date'] = $this->session->userdata('checkin_date');
+			$post['checkout_date'] = $this->session->userdata('checkout_date');
+		}
+
+		//$customer = $this->customer_m->get_customer($post['customer_TCno']);
 		$viewdata = array();
 
 		$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation');
 		$this->load->view('header', $data);
 
+		$customer = true;
 		if(!$customer) {
 			$viewdata['error'] = "Customer does not exist";
 		} else {
@@ -46,7 +60,7 @@ class Reservation extends CI_Controller {
 			$this->load->view('reservation/add',$viewdata);
 		} else {
 			$viewdata['rooms'] = $rooms;
-			$viewdata['customer_TCno'] = $post['customer_TCno'];
+			//$viewdata['customer_TCno'] = $post['customer_TCno'];
 			$viewdata['checkin_date'] = $post['checkin_date'];
 			$viewdata['checkout_date'] = $post['checkout_date'];
 			$viewdata['room_type'] = $post['room_type'];
@@ -72,36 +86,90 @@ class Reservation extends CI_Controller {
 	}
 	public function make()
 	{
-		$post = $this->input->post();
+		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+		if(!UID)
+		{
+			$post = $this->input->post();
+			$this->session->set_userdata($post);
+			$this->session->set_userdata(array('useSessionData' => true));
+			echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
+			$this->reservation_login(); // If user is not logged in, redirect to login page
+		}
+		else
+		{
+			// If user is logged in, make reservation
+			$post = $this->input->post();
 
-		$customer = $this->customer_m->get_customer($post['customer_TCno']);
-		$customer = $customer[0];
-		$viewdata = array();
-		$data = array();
-		$data['customer_id'] = $customer->customer_id;
-		$data['room_id'] = $post['room_id'];
-		$data['checkin_date'] = $post['checkin_date'];
-		$data['checkout_date'] = $post['checkout_date'];
-		$data['employee_id'] = UID;
-
-		$date = new DateTime();
-		$date_s = $date->format('Y-m-d');
-		if($date_s>$data['checkin_date']) {
-			$viewdata['error'] = "Checkin can't be before then today";
-		} else {
-			$this->reservation_m->add_reservation($data);
-			$this->room_m->add_room_sale($data, $date_s);
-			$viewdata['success'] = 'Reservation successfully made';
+			if($this->session->userdata('useSessionData') == true)
+		{
+			echo("<script>console.log('useSessionData == true');</script>");
+			$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			echo("<script>console.log('customer tc no: ".json_encode($post['customer_TCno'])."');</script>");
+			$data['room_id'] = $this->session->userdata('room_id');
+			$post['checkin_date'] = $this->session->userdata('checkin_date');
+			$post['checkout_date'] = $this->session->userdata('checkout_date');
+			$post['room_type'] = $this->session->userdata('room_type');
+			$post['room_id'] = $this->session->userdata('room_id');
+			$this->session->set_userData(array('useSessionData' => false));
 		}
 
-		$room_types = $this->room_m->get_room_types();
-		$viewdata['room_types'] = $room_types;
+			$customer = $this->customer_m->get_customer($post['customer_TCno']);
+			$customer = $customer[0];
+			$viewdata = array();
+			$data = array();
+			$data['customer_id'] = $customer->customer_id;
+			$data['room_id'] = $post['room_id'];
+			$data['checkin_date'] = $post['checkin_date'];
+			$data['checkout_date'] = $post['checkout_date'];
+			$data['employee_id'] = UID;
 
-		$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation');
-		$this->load->view('header', $data);
-		$this->load->view('reservation/add', $viewdata);
-		$this->load->view('footer');
+			$date = new DateTime();
+			$date_s = $date->format('Y-m-d');
+			if($date_s>$data['checkin_date']) {
+				$viewdata['error'] = "Checkin can't be before then today";
+			} else {
+				$this->reservation_m->add_reservation($data);
+				$this->room_m->add_room_sale($data, $date_s);
+				$viewdata['success'] = 'Reservation successfully made';
+			}
+
+			$room_types = $this->room_m->get_room_types();
+			$viewdata['room_types'] = $room_types;
+
+			$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation');
+			$this->load->view('header', $data);
+			$this->load->view('reservation/add', $viewdata);
+			$this->load->view('footer');
+		}
 	}
+
+    public function reservation_login() {
+        $viewdata = array();
+
+        if ($this->input->post("username") && $this->input->post("password")) {
+            $username = $this->input->post("username");
+            $password = $this->input->post("password");
+            if ($user = $this->user_m->check_login($username, $password)) {
+                $this->user_l->login($user);
+                // get the customer_TCno when they log in
+                $this->session->set_userdata(array('customer_TCno' => 1));
+				//$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+                //$this->load->view('header', $data);
+                redirect(base_url() . "reservation/make");
+            } else {
+                $viewdata["error"] = true;
+            }
+        }
+		$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+        $this->load->view('header', $data);
+        $this->load->view('reservation/login', $viewdata);
+        $this->load->view('footer');
+    }
+
+    public function logout() {
+        $this->user_l->logout();
+	redirect('/');
+    }
 }
 
 /* End of file welcome.php */

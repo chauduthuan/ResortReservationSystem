@@ -2,7 +2,6 @@
   <div class="main-inner">
     <div class="container">
       <div class="span4">
-        <a href="<?php echo base_url(); ?>customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>
 
         <div class="account-container">
           
@@ -25,10 +24,11 @@
 <? } ?>
       <div class="add-fields">
 
+        <!--
         <div class="field">
           <label for="customer_TCno">Customer TC no:</label>
           <input type="text" id="customer_TCno" name="customer_TCno" required value="" placeholder="Customer ID no"/>
-        </div> <!-- /field -->
+        </div> --> <!-- /field -->
 
         <div class="field">
           <label for="room_type">Room Type:</label>

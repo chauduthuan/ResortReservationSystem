@@ -15,10 +15,11 @@
 					<input type="hidden" id="customer_id" name="customer_id" required readonly value="<?=$customer_id?>"/>
 				</div--> <!-- /field -->
 
+				<!--
 				<div class="field">
 					<label for="customer_TCno">Customer TC no:</label>
 					<input type="text" id="customer_TCno" name="customer_TCno" required readonly value="<?=$customer_TCno?>"/>
-				</div> <!-- /field -->
+				</div> --> <!-- /field -->
 
 				<div class="field">
 					<label for="room_type">Room Type:</label>
