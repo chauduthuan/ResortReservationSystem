@@ -28,10 +28,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// Necessary to load this helper otherwise there will be an undefined call to base_url()
-		$this->load->helper('url');
 
 		//$this->check_login();
-		echo("<script>console.log('Post check(): ".json_encode(UID)."');</script>");
+		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
 
 		$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard');
 
