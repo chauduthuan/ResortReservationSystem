@@ -681,12 +681,6 @@ ALTER TABLE `restaurant_booking`
 ALTER TABLE `room`
   ADD CONSTRAINT `room_ibfk_1` FOREIGN KEY (`room_type`) REFERENCES `room_type` (`room_type`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-  --
-    -- Constraints for table `reservation_type`
-    --
-  --  ALTER TABLE `reservation_type`
-    --  ADD CONSTRAINT `reservation_type_ibfk_1` FOREIGN KEY (`rType_id`) REFERENCES `rType` (`rType_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 --
 -- Constraints for table `room_sales`
