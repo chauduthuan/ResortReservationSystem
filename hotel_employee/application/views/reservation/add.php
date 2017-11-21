@@ -3,14 +3,15 @@
     <div class="container">
       <div class="span4">
         <a href="<?php echo base_url(); ?>customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>
+        <a href="<?php echo base_url(); ?>reservation_type/index" class="btn btn-success btn-large">Edit Reservation Types</a>
 
         <div class="account-container">
-          
+
           <div class="content">
-            
+
             <form action="<?php echo base_url(); ?>reservation/check" method="post">
-            
-              <h1>Search for Rooms</h1>    
+
+              <h1>Search for Rooms</h1>
 <? if(isset($error)) {?>
       <div class="alert alert-danger">
         <button type="button" class="close" data-dismiss="alert">×</button>
@@ -42,7 +43,7 @@
           ?>
          </select>
         </div> <!-- /field -->
-        
+
         <div class="field">
           <label for="checkin_date">Check-in Date:</label>
           <input type="date" id="checkin_date" name="checkin_date" required value=""/>
@@ -59,17 +60,17 @@
         </div--> <!-- /field -->
 
       </div> <!-- /login-fields -->
-      
+
       <div class="login-actions">
-        
+
         <button class="button btn btn-success btn-large">List Available</button>
-        
+
       </div> <!-- .actions -->
-      
-      
-      
+
+
+
     </form>
-    
+
   </div> <!-- /content -->
 </div> <!-- /account-container -->
 </div>
@@ -85,7 +86,7 @@
             <div id='calendar' class='calendar'>
             </div>
           </div>
-          <!-- /widget-content --> 
+          <!-- /widget-content -->
         </div>
         <!-- /widget -->
       </div>
