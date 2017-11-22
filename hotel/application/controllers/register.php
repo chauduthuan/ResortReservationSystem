@@ -18,6 +18,14 @@ class Register extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	public function add(){
+		echo "register/add";
+		$data = $this->input->post();
+
+		$this->customer_m->register_customer($data);
+		echo "   aaaaaaaaaaaaa";
+	}
+
 	public function index()
 	{
         $data = array('title' => 'Register - DB Hotel Management System', 'page' => 'register');

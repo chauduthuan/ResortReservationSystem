@@ -17,11 +17,25 @@ class Customer_m extends CI_Model {
             return $query;
         }
     } 
+
+
     function add_customer($data)
     {
         $this->db->insert('customer', $data);
 //        return $this->db->affected_rows();
     }
+
+    function add_customer_authentication($data){
+        $auth['customer_email'] = $data['customer_email'];
+        $auth['customer_password'] = $data['customer_password'];
+        $this->db->insert('customer_authentication', $auth);
+    }
+
+    function register_customer($data){
+        $this->add_customer_authentication($data);
+        $this->add_customer($data);
+    }
+
 
     function get_active_customers()
     {

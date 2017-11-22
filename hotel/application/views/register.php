@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="<?php echo base_url(); ?>register?>" method="post">
+		<form action="<?php echo base_url(); ?>register/add" method="post">
 		
 			<h1>Register</h1>		
 <? if(isset($error)) {?>
@@ -21,7 +21,7 @@
 
 				<div class="field">
 					<label for="customer_password">Password:</label>
-					<input type="password" id="password" name="customer_email" required value="" placeholder="Password"/>
+					<input type="password" id="password" name="customer_password" required value="" placeholder="Password"/>
 				</div> <!-- /field -->
 
 				<div class="field">
