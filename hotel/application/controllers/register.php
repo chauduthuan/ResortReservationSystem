@@ -21,7 +21,7 @@ class Register extends CI_Controller {
 	public function add(){
 		echo "register/add";
 		$data = $this->input->post();
-
+		// $this->customer_m->add_customer($data);
 		$this->customer_m->register_customer($data);
 		echo "   aaaaaaaaaaaaa";
 	}

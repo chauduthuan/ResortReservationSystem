@@ -21,7 +21,18 @@ class Customer_m extends CI_Model {
 
     function add_customer($data)
     {
-        $this->db->insert('customer', $data);
+        $customer['customer_firstname'] = $data['customer_firstname'];
+        $customer['customer_lastname'] = $data['customer_lastname'];
+        if (array_key_exists('customer_TCno', $customer)){
+            $customer['customer_TCno'] = $data['customer_TCno'];
+        }
+        $customer['customer_city'] = $data['customer_city'];
+        $customer['customer_country'] = $data['customer_country'];
+        $customer['customer_telephone'] = $data['customer_telephone'];
+        $customer['customer_email'] = $data['customer_email'];
+
+        $this->db->insert('customer', $customer);
+        // $this->db->insert('customer', $data);
 //        return $this->db->affected_rows();
     }
 

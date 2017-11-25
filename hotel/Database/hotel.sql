@@ -24,6 +24,9 @@ CREATE TABLE IF NOT EXISTS `customer_payment` (
 ALTER TABLE `customer` 
 	ADD UNIQUE(`customer_email`),
 	ADD INDEX(`customer_email`);
+-- Modify customer_TCno can have NULL value
+ALTER TABLE `customer`
+	MODIFY COLUMN `customer_TCno` varchar(11) NULL; 
 
 
 ALTER TABLE `customer_payment`
