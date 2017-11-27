@@ -180,7 +180,7 @@ if($page == "reservation" ) {
     <?
     if(SHOW_GUIDE) {
     ?>
-    <script src="<?php echo base_url(); ?>js/guidely/guidely.min.js"></script>
+    <!--<script src="<?php echo base_url(); ?>js/guidely/guidely.min.js"></script>-->
 
     <script>
     $(function () {
