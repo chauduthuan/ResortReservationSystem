@@ -18,19 +18,32 @@ class Register extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function add(){
-		$data = $this->input->post();
-		// $this->customer_m->add_customer($data);
-		$this->customer_m->register_customer($data);
-		redirect();
+	public function customer_email_exist($email){
+		$query = $this->db->get_where('customer', array('customer_email' => $email));
+		$count = $query->num_rows();
+		if ($count >= 1){
+			return true;
+		}
+		return false;
 	}
 
 	public function index()
 	{
+		$viewdata = array();
+     	if ($this->input->post("customer_email")){
+     		$customer_email = $this->input->post("customer_email");
+			if ($this->customer_email_exist($customer_email)){
+                $viewdata["error"] = true;
+			}
+			else {
+				$this->customer_m->register_customer($data);
+				redirect();
+			}
+     	}
+
         $data = array('title' => 'Register - DB Hotel Management System', 'page' => 'register');
         $this->load->view('header', $data);
 
-		$viewdata = $this->input->post();
 		$this->load->view('register',$viewdata);
 
 		// $this->load->view('register');
