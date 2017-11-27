@@ -44,7 +44,7 @@
         <div class="subnavbar-inner">
           <div class="container">
             <ul class="mainnav">
-              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
               
               <!-- Employee Tab
               <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('employee'); ?>"><i class="icon-user"></i><span>Employees</span> </a> </li>
@@ -75,7 +75,7 @@
         <div class="subnavbar-inner">
           <div class="container">
             <ul class="mainnav">
-              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
               
               <!-- Employee Tab
               <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('employee'); ?>"><i class="icon-user"></i><span>Employees</span> </a> </li>
