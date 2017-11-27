@@ -33,9 +33,10 @@ class Register extends CI_Controller {
      	if ($this->input->post("customer_email")){
      		$customer_email = $this->input->post("customer_email");
 			if ($this->customer_email_exist($customer_email)){
-                $viewdata["error"] = true;
+				$viewdata["error"] = true;
 			}
 			else {
+				$data = $this->input->post();
 				$this->customer_m->register_customer($data);
 				redirect();
 			}
