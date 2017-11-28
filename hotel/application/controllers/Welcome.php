@@ -45,7 +45,14 @@ class Welcome extends CI_Controller {
 		}
 
 
+		$reservation_order = $this->customer_dashboard_m->get_reservation_order();
+		$restaurant_order = $this->customer_dashboard_m->get_restaurant_order();
 
+		$viewdata = array(
+			'reservation_order' => $reservation_order,
+			'restaurant_order' => $restaurant_order
+		);
+		
 		$this->load->view('header', $data);
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
