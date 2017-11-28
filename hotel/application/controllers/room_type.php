@@ -46,7 +46,20 @@ class Room_type extends CI_Controller {
 			}
 		}
 
-		$data = array('title' => 'Add Room Type - DB Hotel Management System', 'page' => 'room_type');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Add Room Type - DB Hotel Management System', 'page' => 'room_type', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Add Room Type - DB Hotel Management System', 'page' => 'room_type'); 	
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('room-type/add', $viewdata);
 		$this->load->view('footer');
@@ -72,7 +85,19 @@ class Room_type extends CI_Controller {
 			redirect("/room-type");
 		}
 		
-		$data = array('title' => 'Edit Room Type - DB Hotel Management System', 'page' => 'room_type');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Edit Room Type - DB Hotel Management System', 'page' => 'room_type', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Edit Room Type - DB Hotel Management System', 'page' => 'room_type'); 	
+		}
 		$this->load->view('header', $data);
 		$room_type = $this->room_m->getRoomType($room_type);
                 
@@ -89,7 +114,19 @@ class Room_type extends CI_Controller {
 
 		//$viewdata = array('room_types' => $room_types);
 
-		$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room_type');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room_type', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room_type'); 	
+		}
 		$this->load->view('header', $data);
 		//$this->load->view('room-type/info',$viewdata);
 		$this->load->view('room-type/info');

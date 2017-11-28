@@ -39,7 +39,20 @@ class Restaurant extends CI_Controller {
 			redirect("/restaurant");
 		}
 
-		$data = array('title' => 'Add Restaurant - DB Hotel Management System', 'page' => 'restaurant');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Add Restaurant - DB Hotel Management System', 'page' => 'restaurant', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Add Restaurant - DB Hotel Management System', 'page' => 'restaurant'); 	
+		}
+
 		$this->load->view('header', $data);
 		$this->load->view('restaurant/add');
 		$this->load->view('footer');
@@ -66,7 +79,21 @@ class Restaurant extends CI_Controller {
 			$this->restaurant_m->editRestaurant($restaurant_name, $restaurant_open_time, $restaurant_close_time, $restaurant_details, $table_count);
 			redirect("/restaurant");
 		}
-		$data = array('title' => 'Edit Restaurant - DB Hotel Management System', 'page' => 'restaurant');
+
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Edit Restaurant - DB Hotel Management System', 'page' => 'restaurant', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Edit Restaurant - DB Hotel Management System', 'page' => 'restaurant'); 	
+		}
+
 		$this->load->view('header', $data);
 		$restaurant = $this->restaurant_m->getRestaurant($restaurant_name);
 		$viewdata = array('restaurant'  => $restaurant[0]);
@@ -83,7 +110,20 @@ class Restaurant extends CI_Controller {
 
 		//$viewdata = array('restaurants' => $restaurants, 'customers' => $customers);
 
-		$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'restaurant');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'restaurant', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'restaurant'); 	
+		}
+
 		$this->load->view('header', $data);
 		//$this->load->view('restaurant/info',$viewdata);
 		$this->load->view('restaurant/info');

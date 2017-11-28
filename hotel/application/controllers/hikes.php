@@ -29,8 +29,21 @@ class Hikes extends CI_Controller {
 		$this->load->helper('url');
 
 		//$viewdata = array('hikes' => $hikes);
+		
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'hikes', 'full_name' => $customer_full_name);
 
-		$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'hikes');
+		}
+		else
+		{
+			$data = array('title' => 'Restaurants - DB Hotel Management System', 'page' => 'hikes'); 	
+		}
+
 		$this->load->view('header', $data);
 		//$this->load->view('hikes/info',$viewdata);
 		$this->load->view('hikes/info');

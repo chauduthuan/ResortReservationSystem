@@ -42,7 +42,19 @@ class Reservation extends CI_Controller {
 		//$customer = $this->customer_m->get_customer($post['customer_TCno']);
 		$viewdata = array();
 
-		$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation'); 	
+		}
 		$this->load->view('header', $data);
 
 		$customer = true;
@@ -79,7 +91,19 @@ class Reservation extends CI_Controller {
 
 		$room_types = $this->room_m->get_room_types();
 		$viewdata = array('room_types' => $room_types);
-		$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation'); 	
+		}
 		$this->load->view('header', $data);
 		$this->load->view('reservation/info', $viewdata);
 		$this->load->view('footer');
@@ -146,7 +170,19 @@ class Reservation extends CI_Controller {
 			$room_types = $this->room_m->get_room_types();
 			$viewdata['room_types'] = $room_types;
 
-			$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation');
+			if(UID != NULL)
+			{
+				$customer = $this->customer_m->get_customer_with_email(UID);
+				$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+				//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+				//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+				$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation', 'full_name' => $customer_full_name);
+
+			}
+			else
+			{
+				$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation'); 	
+			}
 			$this->load->view('header', $data);
 			$this->load->view('reservation/add', $viewdata);
 			$this->load->view('footer');
@@ -174,7 +210,19 @@ class Reservation extends CI_Controller {
                 $viewdata["error"] = true;
             }
         }
-		$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation', 'full_name' => $customer_full_name);
+
+		}
+		else
+		{
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation'); 	
+		}
         $this->load->view('header', $data);
         $this->load->view('reservation/login', $viewdata);
         $this->load->view('footer');
