@@ -9,7 +9,9 @@ class customer_dashboard_m extends CI_Model {
     }
     
     function get_reservation_order() {
-        $query = $this->db->from('reservation')->get();
+        $query = $this->db->query("SELECT * FROM reservation"); //WHERE someelement = anotherElementOfReference
+																//maybe add something to user_l and check_login to get
+																//a reference to customer_id
         $data = array();
 
         foreach(@$query->result() as $row) {
