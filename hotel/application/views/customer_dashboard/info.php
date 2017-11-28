@@ -14,7 +14,7 @@
             <div class="widget-content">
               <table class="table table-striped table-bordered">
                 <thead>
-                  <tr>
+                  <tr> 
                     <th> Restaurant </th>
                     <th> Table No. </th>
                     <th> Book Date </th>

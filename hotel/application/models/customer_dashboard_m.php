@@ -19,7 +19,7 @@ class customer_dashboard_m extends CI_Model {
                 $data[] = $row;
             }
         }
-
+ 
         return $data;
     }
 
