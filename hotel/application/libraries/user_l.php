@@ -11,7 +11,7 @@ class user_l{
 		$data = array(
 			'uid' => $user[0]->customer_email,
 			'username' => $user[0]->customer_email,
-			'fullname' => $user[0]->customer_firstname." ".$user[0]->customer_lastname,
+			//'fullname' => $user[0]->customer_firstname." ".$user[0]->customer_lastname
 			//'email' => $user[0]->employee_email,
 			//'department_name' => $user[0]->department_name
 		);
