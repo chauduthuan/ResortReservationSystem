@@ -10,7 +10,7 @@
             		<div class="widget-content">
              			<div class="widget big-stats-container">
                 			<div class="widget-content">
-                 				<h6 class="bigstats">  Here are the different trails you can go on:</h6>
+                 				<h6 class="bigstats">  Here are the different trails you can go on: </h6>
                  					<body>
 
 <div class="slideshow-container">
