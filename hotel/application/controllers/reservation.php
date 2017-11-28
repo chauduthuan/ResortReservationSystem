@@ -87,8 +87,8 @@ class Reservation extends CI_Controller {
 	public function make()
 	{
 		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
-		echo("<script>console.log('CUSTOMER: ".json_encode($this->session->userdata('customer'))."');</script>");
-		echo("<script>console.log('CUSTOMER EMAIL: ".json_encode($this->session->userdata('customer_email'))."');</script>");
+		//echo("<script>console.log('CUSTOMER: ".json_encode($this->session->userdata('customer'))."');</script>");
+		//echo("<script>console.log('CUSTOMER EMAIL: ".json_encode($this->session->userdata('customer_email'))."');</script>");
 		if(!UID)
 		{
 			$post = $this->input->post();
@@ -117,6 +117,7 @@ class Reservation extends CI_Controller {
 			$post['room_id'] = $this->session->userdata('room_id');
 			$this->session->set_userData(array('useSessionData' => false));
 			}
+
 			// CHECK, IF $post['customer_TCno'] == NULL
 			//echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
 			//$customer = $this->customer_m->get_customer($post['customer_TCno']);
@@ -160,10 +161,10 @@ class Reservation extends CI_Controller {
             if ($user = $this->user_m->check_login($username, $password)) {
                 $this->user_l->login($user);
 
-                $customer_email = $this->input->post("username");
-                $this->session->set_userdata(array('customer_email' => $customer_email));
-				$customer = $this->customer_m->get_customer_with_email($customer_email);
-				$this->session->set_userdata(array('customer' => $customer));
+                //$customer_email = $this->input->post("username");
+                //$this->session->set_userdata(array('customer_email' => $customer_email));
+				//$customer = $this->customer_m->get_customer_with_email($customer_email);
+				//$this->session->set_userdata(array('customer' => $customer));
                 // get the customer_TCno when they log in
                 //$this->session->set_userdata(array('customer_TCno' => 1));
 				//$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
