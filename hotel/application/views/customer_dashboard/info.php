@@ -68,7 +68,6 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th> Room No. </th>
 					          <th> Room Type </th>
                     <th> Order Date </th>
                     <th> Check-In Date </th>
@@ -79,7 +78,6 @@
                 <tbody>
                   <? foreach ($reservation_order as $k => $cust) { ?>
                   <tr>
-                    <td> <?=$cust->room_id?></td>
                     <td> <?=$cust->room_id?> </td>
                     <td> <?=$cust->reservation_date?></td>
                     <td> <?=$cust->checkin_date?></td>

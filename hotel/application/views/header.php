@@ -79,7 +79,7 @@
           <div class="container">
             <ul class="mainnav">
               <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
-              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url('customer_dashboard'); ?>"><i class="icon-dashboard"></i><span>Customer Dashboard</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url('customer_dashboard'); ?>"><i class="icon-user"></i><span>Customer Dashboard</span> </a> </li>
               
 
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
