@@ -10,11 +10,12 @@
             		<div class="widget-content">
              			<div class="widget big-stats-container">
                 			<div class="widget-content">
-                 				<h6 class="bigstats">  Here are the weekly featured dishes:</h6>
-                 					Information to be added and formatted
+                 				<h6 class="bigstats">  Here is the weekly featured dish:</h6>
+                 					<center> Tortellini de Fancy </center>
+                 					<img src="http://wdy.h-cdn.co/assets/cm/15/09/54eae2b6b63e8_-_10-tacobellini-1.jpg" style="width:100%">
 
                  				<h6 class="bigstats">  Here is the menu:</h6>
-                 					Information to be added and formatted
+                 				<img src="https://marketplace.canva.com/MACGLf7yGK0/2/0/thumbnail_large/canva-violet-and-gold-elegant-fancy-menu-MACGLf7yGK0.jpg" style="width:100%">
                  				</div>
                  			</div>
                  		</div>
