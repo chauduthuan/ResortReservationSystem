@@ -9,16 +9,16 @@ class customer_dashboard_m extends CI_Model {
     }
     
     function get_reservation_order() {
-    	$query = $this->db->query("SELECT * FROM reservation");//WHERE *someelement = anotherELEMENTTOREFERENCE
-                                                               //maybe add something to user_l and check_login
-                                                               //to get a reference to customer_id
+    	$query = $this->db->query("SELECT * FROM reservation WHERE customer_id IN (SELECT customer_id FROM customer WHERE customer_email = '".  UID  ."')");
+        // .. (SELECT customer_id FROM customer WHERE customer_id = 1)") is an example that works, trying to grab customer_email
         //$query = $this->db->from('reservation')->get();
         $data = array();
-
-        foreach(@$query->result() as $row) {
-            $data[] = $row;
+        
+        if($query->num_rows() > 0){
+            foreach(@$query->result() as $row) {
+                $data[] = $row;
+            }
         }
-
         if(count($data)) {
             return $data;
         }
@@ -29,11 +29,13 @@ class customer_dashboard_m extends CI_Model {
         $query = $this->db->from('restaurant_booking')->get();
         $data = array();
 
-        foreach(@$query->result() as $row) {
-            $data[] = $row;
+        if($query->num_rows() > 0){
+            foreach(@$query->result() as $row) {
+                $data[] = $row;
+            }
         }
 
-        if(count($data) && $query -> num_rows() > 0) {
+        if(count($data)) {
             return $data;
         }
         return false;
