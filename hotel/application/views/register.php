@@ -55,7 +55,7 @@
 			
 			<div class="login-actions">
 				
-				<button class="button btn btn-success btn-large">Add</button>
+				<button class="button btn btn-success btn-large">Register</button>
 				
 			</div> <!-- .actions -->
 			
