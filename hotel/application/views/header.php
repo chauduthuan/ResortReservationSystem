@@ -26,11 +26,18 @@
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                 class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php echo base_url(); ?>"><i class="icon-home"></i> <?=HOTEL_NAME?></a>
+    <?
+      if(UID){?>
+        <div type="text" style="text-align:right; color: black; margin-top:10px;">Welcome, <?echo $full_name?>
+        </div>
+      <? } ?>
+
       <?
         if(UID){?>
-          
+
           <!--/.nav-collapse --> 
       <? } ?>
+
     </div>
     <!-- /container --> 
   </div>

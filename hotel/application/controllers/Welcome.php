@@ -30,9 +30,21 @@ class Welcome extends CI_Controller {
 		// Necessary to load this helper otherwise there will be an undefined call to base_url()
 
 		//$this->check_login();
-		//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+		if(UID != NULL)
+		{
+			$customer = $this->customer_m->get_customer_with_email(UID);
+			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
+			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard', 'full_name' => $customer_full_name);
 
-		$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard');
+		}
+		else
+		{
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard'); 	
+		}
+
+
 
 		$this->load->view('header', $data);
 		$this->load->view('welcome_message');

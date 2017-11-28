@@ -87,6 +87,8 @@ class Reservation extends CI_Controller {
 	public function make()
 	{
 		echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
+		//echo("<script>console.log('CUSTOMER: ".json_encode($this->session->userdata('customer'))."');</script>");
+		//echo("<script>console.log('CUSTOMER EMAIL: ".json_encode($this->session->userdata('customer_email'))."');</script>");
 		if(!UID)
 		{
 			$post = $this->input->post();
@@ -94,6 +96,7 @@ class Reservation extends CI_Controller {
 			$this->session->set_userdata(array('useSessionData' => true));
 			echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
 			$this->reservation_login(); // If user is not logged in, redirect to login page
+
 		}
 		else
 		{
@@ -101,9 +104,11 @@ class Reservation extends CI_Controller {
 			$post = $this->input->post();
 
 			if($this->session->userdata('useSessionData') == true)
-		{
+			{
 			echo("<script>console.log('useSessionData == true');</script>");
-			$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			//$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
+
 			echo("<script>console.log('customer tc no: ".json_encode($post['customer_TCno'])."');</script>");
 			$data['room_id'] = $this->session->userdata('room_id');
 			$post['checkin_date'] = $this->session->userdata('checkin_date');
@@ -111,9 +116,12 @@ class Reservation extends CI_Controller {
 			$post['room_type'] = $this->session->userdata('room_type');
 			$post['room_id'] = $this->session->userdata('room_id');
 			$this->session->set_userData(array('useSessionData' => false));
-		}
+			}
 
-			$customer = $this->customer_m->get_customer($post['customer_TCno']);
+			// CHECK, IF $post['customer_TCno'] == NULL
+			//echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
+			//$customer = $this->customer_m->get_customer($post['customer_TCno']);
+			$customer = $this->customer_m->get_customer_with_email(UID);
 			$customer = $customer[0];
 			$viewdata = array();
 			$data = array();
@@ -121,13 +129,15 @@ class Reservation extends CI_Controller {
 			$data['room_id'] = $post['room_id'];
 			$data['checkin_date'] = $post['checkin_date'];
 			$data['checkout_date'] = $post['checkout_date'];
-			$data['employee_id'] = UID;
+			//$data['employee_id'] = UID;
+			$data['employee_id'] = NULL;
 
 			$date = new DateTime();
 			$date_s = $date->format('Y-m-d');
 			if($date_s>$data['checkin_date']) {
 				$viewdata['error'] = "Checkin can't be before then today";
 			} else {
+				echo("<script>console.log('customer tc no: ".json_encode($data)."');</script>");
 				$this->reservation_m->add_reservation($data);
 				$this->room_m->add_room_sale($data, $date_s);
 				$viewdata['success'] = 'Reservation successfully made';
@@ -145,14 +155,18 @@ class Reservation extends CI_Controller {
 
     public function reservation_login() {
         $viewdata = array();
-
         if ($this->input->post("username") && $this->input->post("password")) {
             $username = $this->input->post("username");
             $password = $this->input->post("password");
             if ($user = $this->user_m->check_login($username, $password)) {
                 $this->user_l->login($user);
+
+                //$customer_email = $this->input->post("username");
+                //$this->session->set_userdata(array('customer_email' => $customer_email));
+				//$customer = $this->customer_m->get_customer_with_email($customer_email);
+				//$this->session->set_userdata(array('customer' => $customer));
                 // get the customer_TCno when they log in
-                $this->session->set_userdata(array('customer_TCno' => 1));
+                //$this->session->set_userdata(array('customer_TCno' => 1));
 				//$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
                 //$this->load->view('header', $data);
                 redirect(base_url() . "reservation/make");
