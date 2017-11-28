@@ -18,6 +18,16 @@ class Customer_m extends CI_Model {
         }
     } 
 
+    function get_customer_with_email($customer_email)
+    {
+        $query = $this->db->get_where('customer', array('customer_email' => $customer_email));
+        if($query) {
+            return $query->result();
+        } else {
+            return $query;
+        }
+    } 
+
 
     function add_customer($data)
     {

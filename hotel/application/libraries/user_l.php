@@ -9,12 +9,13 @@ class user_l{
 	{
 		// var_dump($user);
 		$data = array(
-			'uid' => $user[0]->employee_id,
-			'username' => $user[0]->employee_username,
-			'fullname' => $user[0]->employee_firstname." ".$user[0]->employee_lastname,
-			'email' => $user[0]->employee_email,
-			'department_name' => $user[0]->department_name
+			'uid' => $user[0]->customer_email,
+			'username' => $user[0]->customer_email,
+			'fullname' => $user[0]->customer_firstname." ".$user[0]->customer_lastname,
+			//'email' => $user[0]->employee_email,
+			//'department_name' => $user[0]->department_name
 		);
+
 		$CI = &get_instance();
 		$CI->session->set_userdata($data);
 		// $_SESSION["uid"] = $user[0]->employee_id
