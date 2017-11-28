@@ -106,7 +106,9 @@ class Reservation extends CI_Controller {
 			if($this->session->userdata('useSessionData') == true)
 			{
 			echo("<script>console.log('useSessionData == true');</script>");
-			$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			//$post['customer_TCno'] = $this->session->userdata('customer_TCno');
+			echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
+
 			echo("<script>console.log('customer tc no: ".json_encode($post['customer_TCno'])."');</script>");
 			$data['room_id'] = $this->session->userdata('room_id');
 			$post['checkin_date'] = $this->session->userdata('checkin_date');
@@ -116,7 +118,9 @@ class Reservation extends CI_Controller {
 			$this->session->set_userData(array('useSessionData' => false));
 			}
 			// CHECK, IF $post['customer_TCno'] == NULL
-			$customer = $this->customer_m->get_customer($post['customer_TCno']);
+			//echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
+			//$customer = $this->customer_m->get_customer($post['customer_TCno']);
+			$customer = $this->customer_m->get_customer_with_email(UID);
 			$customer = $customer[0];
 			$viewdata = array();
 			$data = array();
@@ -161,7 +165,7 @@ class Reservation extends CI_Controller {
 				$customer = $this->customer_m->get_customer_with_email($customer_email);
 				$this->session->set_userdata(array('customer' => $customer));
                 // get the customer_TCno when they log in
-                $this->session->set_userdata(array('customer_TCno' => 1));
+                //$this->session->set_userdata(array('customer_TCno' => 1));
 				//$data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
                 //$this->load->view('header', $data);
                 redirect(base_url() . "reservation/make");
