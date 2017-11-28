@@ -10,8 +10,109 @@
             		<div class="widget-content">
              			<div class="widget big-stats-container">
                 			<div class="widget-content">
-                 				<h6 class="bigstats">  Here are the different trails you can go on: </h6>
-                 					<body>
+                 				<h2 class="bigstats" style="margin: 20px 50px">  Here are the different trails you can go on: </h6>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: #000000;
+  font-size: 40px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 12px}
+}
+</style>
+</head>
+<body>
 
 <div class="slideshow-container">
 
@@ -24,16 +125,16 @@
 
 <div class="mySlides">
   <div class="numbertext">2 / 3</div>
-  <img src="https://photos.smugmug.com/SanDiego-1/Anza-Borrego-Desert/i-dcdbwSB/0/266d1014/L/Borrego%20Springs%2C%20View%20of%20Serpent%20with%20Photographer-L.jpg"
+  <img src="http://www.lindsaytaub.com/wp-content/uploads/2011/12/Borrego-2.jpg"
    style="width:100%">
   <div class="text">Dragon Trail</div>
 </div>
 
 <div class="mySlides">
   <div class="numbertext">3 / 3</div>
-  <img src="https://i.pinimg.com/originals/34/d4/d7/34d4d7ddab7372736092bae9d827330e.jpg" 
+  <img src="https://hikinglibrarian.files.wordpress.com/2012/02/whalepeak01.jpg" 
   style="width:100%">
-  <div class="text">Boreggo Palm Canyon Trail</div>
+  <div class="text">Anza-Borrego State Park</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -78,11 +179,12 @@ function showSlides(n) {
 </script>
 
 </body>
+</html> 
 
-                 				<h6 class="bigstats">  Here are all types of equipment you can rent:</h6>
-                 					<center> Hike Package $50</center>
+                 				<h2 class="bigstats" style="margin: 20px 50px">  Here are all types of equipment you can rent:</h2>
+                 					<h3><center> Hike Package $50</center></h3>
                  					<img src="http://www.justicepriest.com/wp-content/uploads/2016/10/hiking-equipment-hirzlweg.jpg" style="width:100%">
-                 					<center> Bike Package $75
+                 					<h3><center> Bike Package $75</center></h3>
                  					<img src="https://bikesreviewed.com/wp-content/uploads/2017/07/Hiking-Bike.jpg" style="width:100%">
                  				
                  			</div>
