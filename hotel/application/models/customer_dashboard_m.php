@@ -9,7 +9,10 @@ class customer_dashboard_m extends CI_Model {
     }
     
     function get_reservation_order() {
-        $query = $this->db->from('reservation')->get();
+    	$query = $this->db->query("SELECT * FROM reservation");//WHERE *someelement = anotherELEMENTTOREFERENCE
+                                                               //maybe add something to user_l and check_login
+                                                               //to get a reference to customer_id
+        //$query = $this->db->from('reservation')->get();
         $data = array();
 
         foreach(@$query->result() as $row) {
@@ -30,7 +33,7 @@ class customer_dashboard_m extends CI_Model {
             $data[] = $row;
         }
 
-        if(count($data)) {
+        if(count($data) && $query -> num_rows() > 0) {
             return $data;
         }
         return false;
