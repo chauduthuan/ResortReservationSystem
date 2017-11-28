@@ -15,20 +15,19 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th> Order No. </th>
-                    <th> Ordered Items </th>
-                    <th> Order Time </th>
+                    <th> Restaurant </th>
+                    <th> Table No. </th>
+                    <th> Book Date </th>
                     <th> Total Paid </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <? foreach ($customer_most_paid as $k => $cust) { ?>
+                  <? foreach ($restaurant_order as $k => $cust) { ?>
                   <tr>
-                    <td> <?php echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td> <!-- Edit following list for restaurant items -->
-                    <td> <?=$cust->customer_TCno?> </td>
-                    <td> <?=$cust->checkin_count?></td>
-                    <td> <?=$cust->total_paid?></td>
-                    <!--td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td-->
+                    <td> <?=$cust->restaurant_name?> </td>
+                    <td> <?=$cust->table_number?> </td>
+                    <td> <?=$cust->book_date?></td>
+                    <td> <?=$cust->book_price?></td>
                   </tr>
                   <? } ?>
                 </tbody>
@@ -69,20 +68,22 @@
                 <thead>
                   <tr>
                     <th> Room No. </th>
-					<th> Room Type </th>
+					          <th> Room Type </th>
                     <th> Order Date </th>
                     <th> Check-In Date </th>
-					<th> Check-Out Date </th>
+					          <th> Check-Out Date </th>
                     <th> Total Paid </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <? foreach ($customer_pay_list as $k => $cust) { ?>
+                  <? foreach ($reservation_order as $k => $cust) { ?>
                   <tr>
-                    <td> <? echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td>
-                    <td> <?=$cust->customer_TCno?> </td>
-                    <td> <?=$cust->checkin_count?></td>
-                    <td> <?=$cust->total_paid?></td>
+                    <td> <?=$cust->room_id?></td>
+                    <td> <?=$cust->room_id?> </td>
+                    <td> <?=$cust->reservation_date?></td>
+                    <td> <?=$cust->checkin_date?></td>
+                    <td> <?=$cust->checkout_date?></td>
+                    <td> <?=$cust->reservation_price?></td>
                     <!--td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td-->
                   </tr>
                   <? } ?>
@@ -107,13 +108,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <? foreach ($customer_most_paid as $k => $cust) { ?>
+                  <? foreach ($reservation_order as $k => $cust) { ?>
                   <tr>
-                    <td> <?php echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td> <!-- Edit following list for restaurant items -->
-                    <td> <?=$cust->customer_TCno?> </td>
-                    <td> <?=$cust->checkin_count?></td>
-                    <td> <?=$cust->total_paid?></td>
-                    <!--td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td-->
+                    <td> <?php echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td> 
+                    <td> <?=$cust->room_id?> </td>
+                    <td> <?=$cust->room_id?></td>
+                    <td> <?=$cust->room_id?></td>
                   </tr>
                   <? } ?>
                 </tbody>
@@ -121,45 +121,6 @@
             </div>
             <!-- /widget-content --> 
           </div>
-          <? /*
-          <!-- /widget --> 
-          <div class="widget widget-nopad">
-            <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3> Recent News</h3>
-            </div>
-            <!-- /widget-header -->
-            <div class="widget-content">
-              <ul class="news-items">
-                <li>
-                  
-                  <div class="news-item-date"> <span class="news-item-day">29</span> <span class="news-item-month">Aug</span> </div>
-                  <div class="news-item-detail"> <a href="http://www.egrappler.com/thursday-roundup-40/" class="news-item-title" target="_blank">Thursday Roundup # 40</a>
-                    <p class="news-item-preview"> This is our web design and development news series where we share our favorite design/development related articles, resources, tutorials and awesome freebies. </p>
-                  </div>
-                  
-                </li>
-                <li>
-                  
-                  <div class="news-item-date"> <span class="news-item-day">15</span> <span class="news-item-month">Jun</span> </div>
-                  <div class="news-item-detail"> <a href="http://www.egrappler.com/retina-ready-responsive-app-landing-page-website-template-app-landing/" class="news-item-title" target="_blank">Retina Ready Responsive App Landing Page Website Template – App Landing</a>
-                    <p class="news-item-preview"> App Landing is a retina ready responsive app landing page website template perfect for software and application developers and small business owners looking to promote their iPhone, iPad, Android Apps and software products.</p>
-                  </div>
-                  
-                </li>
-                <li>
-                  
-                  <div class="news-item-date"> <span class="news-item-day">29</span> <span class="news-item-month">Oct</span> </div>
-                  <div class="news-item-detail"> <a href="http://www.egrappler.com/open-source-jquery-php-ajax-contact-form-templates-with-captcha-formify/" class="news-item-title" target="_blank">Open Source jQuery PHP Ajax Contact Form Templates With Captcha: Formify</a>
-                    <p class="news-item-preview"> Formify is a contribution to lessen the pain of creating contact forms. The collection contains six different forms that are commonly used. These open source contact forms can be customized as well to suit the need for your website/application.</p>
-                  </div>
-                  
-                </li>
-              </ul>
-            </div>
-            <!-- /widget-content --> 
-          </div>
-          <!-- /widget -->
-          */ ?>
         </div>
         <!-- /span6 --> 
       </div>
