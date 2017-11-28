@@ -100,6 +100,8 @@
               
               <li <? if($page == "hikes"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('hikes'); ?>"><i class="icon-retweet"></i><span>Hikes and Rentals</span> </a> </li>
 
+			        <li <? if($page == "help"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('login/logout'); ?>"><i class="icon-power-off"></i><span>Logout</span> </a> </li>
+
               <li></li> <!-- This is to add a bar at the end of the last item for the tabs-->
             </ul>
           </div>
