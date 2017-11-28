@@ -21,6 +21,12 @@
 				</div> <!-- /field -->
 
 				<div class="field">
+					<label for="reservation_type">Reseravation Type:</label>
+					<input type="text" id="room_type" name="reservation_type" required readonly value="<?=$reservation_type?>"/>
+				 </select>
+				</div> <!-- /field -->
+
+				<div class="field">
 					<label for="room_type">Room Type:</label>
 					<input type="text" id="room_type" name="room_type" required readonly value="<?=$room_type?>"/>
 				 </select>

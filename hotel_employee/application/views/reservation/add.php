@@ -32,6 +32,19 @@
         </div> <!-- /field -->
 
         <div class="field">
+          <label for="reservation_type">Reservation Type:</label>
+          <select id="reservation_type" name="reservation_type" >
+            <?
+              foreach ($reservation_type as $k=>$rt) {
+                ?>
+                <option value="<?=$rt->reservation_type?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->reservation_type?></option>
+                <?
+              }
+            ?>
+          </select>
+        </div> <!-- /field -->
+
+        <div class="field">
           <label for="room_type">Room Type:</label>
           <select id="room_type" name="room_type">
           <?
