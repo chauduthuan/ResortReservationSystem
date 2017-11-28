@@ -53,10 +53,6 @@
             <ul class="mainnav">
               <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
               
-              <!-- Employee Tab
-              <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('employee'); ?>"><i class="icon-user"></i><span>Employees</span> </a> </li>
-              -->
-
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
               <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -83,10 +79,8 @@
           <div class="container">
             <ul class="mainnav">
               <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url('customer_dashboard'); ?>"><i class="icon-dashboard"></i><span>Customer Dashboard</span> </a> </li>
               
-              <!-- Employee Tab
-              <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('employee'); ?>"><i class="icon-user"></i><span>Employees</span> </a> </li>
-              -->
 
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
               <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>

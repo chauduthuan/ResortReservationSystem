@@ -129,11 +129,7 @@ class Reservation extends CI_Controller {
 
 			if($this->session->userdata('useSessionData') == true)
 			{
-			echo("<script>console.log('useSessionData == true');</script>");
 			//$post['customer_TCno'] = $this->session->userdata('customer_TCno');
-			echo("<script>console.log('customer TCno upon login: ".json_encode($post['customer_TCno'])."');</script>");
-
-			echo("<script>console.log('customer tc no: ".json_encode($post['customer_TCno'])."');</script>");
 			$data['room_id'] = $this->session->userdata('room_id');
 			$post['checkin_date'] = $this->session->userdata('checkin_date');
 			$post['checkout_date'] = $this->session->userdata('checkout_date');

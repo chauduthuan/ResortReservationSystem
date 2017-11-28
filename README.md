@@ -1,5 +1,5 @@
 SDSU CS532 Software Engineering
-Team: Resort Reservation System (RRS)
+Team: Resort Reservation System (RRS) 
 Members: Michael Yee, Tony La, Thuan Chau, Steven Duong, Ching Yi Lui, Alexander Giang
 
 
