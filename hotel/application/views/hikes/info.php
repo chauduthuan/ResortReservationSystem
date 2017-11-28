@@ -1,7 +1,7 @@
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <div class="span4">
+            <div class="span4" style="width:100%">
 		        <div class="widget widget-nopad" id="target-1">
             		<div class="widget-header"> <i class="icon-list-alt"></i>
              			<h3> Hiking and Rentals</h3>
@@ -84,7 +84,7 @@ function showSlides(n) {
                  					<img src="http://www.justicepriest.com/wp-content/uploads/2016/10/hiking-equipment-hirzlweg.jpg" style="width:100%">
                  					<center> Bike Package $75
                  					<img src="https://bikesreviewed.com/wp-content/uploads/2017/07/Hiking-Bike.jpg" style="width:100%">
-                 				</div>
+                 				
                  			</div>
                  		</div>
                  	</div>

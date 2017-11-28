@@ -1,8 +1,8 @@
 <div class="main">
-  <div class="main-inner">
-    <div class="container">
-      <div class="span4">
-      	<div class="widget widget-nopad" id="target-1">
+  	<div class="main-inner">
+    	<div class="container">
+        	<div class="span4" style="width:100%">
+      			<div class="widget widget-nopad" id="target-1">
             		<div class="widget-header"> <i class="icon-list-alt"></i>
              			<h3> Restaraunt</h3>
             		</div>
@@ -16,13 +16,12 @@
 
                  				<h6 class="bigstats">  Here is the menu:</h6>
                  				<img src="https://marketplace.canva.com/MACGLf7yGK0/2/0/thumbnail_large/canva-violet-and-gold-elegant-fancy-menu-MACGLf7yGK0.jpg" style="width:100%">
-                 				</div>
                  			</div>
                  		</div>
                  	</div>
-                </div>
-                <!-- widget-content -->
-      </div>
+                    <!-- widget-content -->
+                 </div>
+            </div>
+      	</div>
   	</div>
-  </div>
 </div>
