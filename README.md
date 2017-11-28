@@ -15,10 +15,9 @@ Borrego Springs Resort Installation Steps
 
 	OR
 	
-	pull the repository into the ~/xampp/htdocs/ location using: 
+	clone the repository into the ~/xampp/htdocs/ location using: 
 	git init
-	git remote add origin https://github.com/chauduthuan/ResortReservationSystem
-	git pull origin master
+	git clone https://github.com/chauduthuan/ResortReservationSystem .
 
 4. For the project URL, make sure the base_url name in ~/app/config.php file of both folders are:
 	
@@ -42,19 +41,19 @@ Borrego Springs Resort Installation Steps
 	Visitor/Customer: localhost/hotel
 	Employee: localhost/hotel_employee
 	
-5. For employee, you can login with the following credentials:
+For employee, you can login with the following credentials:
 
 	username - ganesh
 	password - ganesh
 
 	- Here, Employees can look at Customer information and make any changes accordingly.
 
-6. For Visitor, you can view a mock-up of what a landing page could be:
+For Visitor, you can view a mock-up of what a landing page could be:
 	- Visitors can view the Rooms, Room Types, Restaraunt Info, and Hikes and Rental Info. 
 	- Visitors cannot make reservations. Only Customers with an account can.
 	- Visitors can register for an account using the shortcut on the Home Page.
 
-7. For Customers, it looks the same as the landing page, except there is a Customer Dashboard tab.
+For Customers, it looks the same as the landing page, except there is a Customer Dashboard tab.
 	- Here, customers can view their Reservations made.
 	- Customers can also view their food orders, hike rentals, and stuff. 
 		- This feature is not implemented and has hard-coded information
