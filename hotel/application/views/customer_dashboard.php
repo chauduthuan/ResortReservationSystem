@@ -29,6 +29,7 @@
                     <td> <?=$cust->book_date?></td>
                     <td> <?=$cust->book_price?></td>
                   </tr>
+                
                   <? } ?>
                 </tbody>
               </table>
@@ -110,10 +111,10 @@
                 <tbody>
                   <? foreach ($reservation_order as $k => $cust) { ?>
                   <tr>
-                    <td> <?php echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td> 
+                    <!--<td> <?=$cust->room_id?></td> EMPTY BECAUSE WE'RE NOT USING IT
                     <td> <?=$cust->room_id?> </td>
-                    <td> <?=$cust->room_id?></td>
-                    <td> <?=$cust->room_id?></td>
+                    <td> <?=$cust->reservation_date?></td>
+                    <td> <?=$cust->checkin_date?></td> --> 
                   </tr>
                   <? } ?>
                 </tbody>
