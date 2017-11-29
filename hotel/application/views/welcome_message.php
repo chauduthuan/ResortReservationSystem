@@ -147,7 +147,7 @@ body {font-family: Verdana,sans-serif;margin:0}
             <!-- /widget-header -->
             <div class="widget-content">
               <b> Super Savings! </b><i>20% off on Thanksgiving weekend from 11/27/2017 - 11/26/2017 </i>
-            
+
             </div>
             <!-- /widget-content -->
           </div>
@@ -191,23 +191,22 @@ body {font-family: Verdana,sans-serif;margin:0}
 
           <div class="mySlides">
             <div class="numbertext">1 / 3</div>
-            <img src="https://i1.wp.com/food.theplainjane.com/wp-content/uploads/2014/10/sloths-borrego-springs-sculptures.jpg"
-            style="width:100%">
-            <div class="text">Caption Text</div>
+            <img src="img/sampleResortLogo.png"
+            style="width:100%; height: 400px">
           </div>
 
           <div class="mySlides">
             <div class="numbertext">2 / 3</div>
-            <img src="https://photos.smugmug.com/SanDiego-1/Anza-Borrego-Desert/i-dcdbwSB/0/266d1014/L/Borrego%20Springs%2C%20View%20of%20Serpent%20with%20Photographer-L.jpg"
-             style="width:100%">
-            <div class="text">Caption Two</div>
+            <img src="img/resort_pic1.png"
+             style="width:100%; height: 400px">
+            <div class="text">Look at the view!</div>
           </div>
 
           <div class="mySlides">
             <div class="numbertext">3 / 3</div>
-            <img src="http://www.scga.org/images/uploads/facilities/1758/borrego_springs3__large.jpg"
-            style="width:100%">
-            <div class="text">Caption Three</div>
+            <img src="img/desert-flowers-in-anza-borrego.jpg"
+            style="width:100%; height: 400px">
+            <div class="text">Desert flowers in the spring</div>
           </div>
 
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
