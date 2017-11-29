@@ -26,7 +26,7 @@ class Login extends CI_Controller {
                 $viewdata["error"] = true;
             }
         }
-        $data = array('title' => 'Boreggo Springs Resort', 'page' => 'reservation');
+        $data = array('title' => 'Boreggo Springs Resort', 'page' => 'dashboard');
         $this->load->view('header', $data);
         $this->load->view('login', $viewdata);
         $this->load->view('footer');

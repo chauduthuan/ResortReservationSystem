@@ -54,12 +54,16 @@
               <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
               
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
+              
+              <li <? if($page == "room"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('room'); ?>"><i class="icon-home"></i><span>Rooms</span> </a> </li>
+              <!--
               <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo base_url('room'); ?>">Rooms</a></li>
                   <li><a href="<?php echo base_url('room_type'); ?>">Room Types</a></li>
                 </ul>
               </li>
+              -->
 
               <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('restaurant'); ?>"><i class="icon-fire"></i><span>Restaurant</span> </a> </li>
               
@@ -78,17 +82,22 @@
         <div class="subnavbar-inner">
           <div class="container">
             <ul class="mainnav">
-              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
-              <li <? if($page == "dashboard"){ echo 'class=""'; } ?>><a href="<?php echo base_url('customer_dashboard'); ?>"><i class="icon-user"></i><span>Customer Dashboard</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><i class="icon-dashboard"></i><span>Home</span> </a> </li>
+              <li <? if($page == "customer_dashboard"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('customer_dashboard'); ?>"><i class="icon-user"></i><span>Customer Dashboard</span> </a> </li>
               
 
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('reservation'); ?>"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
+
+              <li <? if($page == "room"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('room'); ?>"><i class="icon-home"></i><span>Rooms</span> </a> </li>
+
+              <!--
               <li class="dropdown <? if($page == 'room' || $page == 'room_type'){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo base_url('room'); ?>">Rooms</a></li>
                   <li><a href="<?php echo base_url('room_type'); ?>">Room Types</a></li>
                 </ul>
               </li>
+              -->
 
               <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="<?php echo base_url('restaurant'); ?>"><i class="icon-fire"></i><span>Restaurant</span> </a> </li>
               

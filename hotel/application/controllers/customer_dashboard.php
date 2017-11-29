@@ -37,12 +37,12 @@ class customer_dashboard extends CI_Controller {
 			$customer_full_name = $customer[0]->customer_firstname." ".$customer[0]->customer_lastname;
 			//echo("<script>console.log('UID: ".json_encode(UID)."');</script>");
 			//echo("<script>console.log('Fullname: ".json_encode($customer_full_name)."');</script>");
-			$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard', 'full_name' => $customer_full_name);
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'customer_dashboard', 'full_name' => $customer_full_name);
 
 		}
 		else
 		{
-			$data = array('title' => 'Borrego Springs Resort', 'page' => 'dashboard'); 	
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'customer_dashboard'); 	
 		}
 
 
