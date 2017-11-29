@@ -21,8 +21,8 @@
 				</div> <!-- /field -->
 
 				<div class="field">
-					<label for="reservation_type">Reseravation Type:</label>
-					<input type="text" id="room_type" name="reservation_type" required readonly value="<?=$reservation_type?>"/>
+					<label for="reservation_type">Reservation Type:</label>
+					<input type="text" id="reservation_type" name="reservation_type" required readonly value="<?=$rType_name?>"/>
 				 </select>
 				</div> <!-- /field -->
 
@@ -40,6 +40,16 @@
 				<div class="field">
 					<label for="checkout_date">Check-out Date:</label>
 					<input type="date" id="checkout_date" name="checkout_date" required readonly value="<?=$checkout_date?>"/>
+				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="creditcard_number">Credit Card #:</label>
+					<input type="text" pattern= "[0-9]{16}" id="creditcard_number" name="creditcard_number" required value="" placeholder="Credit Card #"/>
+				</div> <!-- /field -->
+				
+				<div class="field">
+					<label for="cvv">CVV:</label>
+					<input type="text" pattern= "[0-9]{3}" id="cvv" name="cvv" required value="" placeholder="CVV"/>
 				</div> <!-- /field -->
 			</div> <!-- /login-fields -->
 				<div class="row">
