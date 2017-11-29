@@ -191,20 +191,21 @@ body {font-family: Verdana,sans-serif;margin:0}
 
           <div class="mySlides">
             <div class="numbertext">1 / 3</div>
-            <img src="img/sampleResortLogo.png"
+            <img src="http://cg-engrs.com/images//2012/09/DesertDiamond0421.jpg"
             style="width:100%; height: 400px">
+           <div class="text">Borrego Springs Resort</div>
           </div>
 
           <div class="mySlides">
             <div class="numbertext">2 / 3</div>
-            <img src="img/resort_pic1.png"
+            <img src="http://onenatureholidays.com/wp-content/uploads/2016/11/maha1.jpg"
              style="width:100%; height: 400px">
             <div class="text">Look at the view!</div>
           </div>
 
           <div class="mySlides">
             <div class="numbertext">3 / 3</div>
-            <img src="img/desert-flowers-in-anza-borrego.jpg"
+            <img src="https://southwestdesertlover.files.wordpress.com/2012/03/desert-flowers-in-anza-borrego.jpg"
             style="width:100%; height: 400px">
             <div class="text">Desert flowers in the spring</div>
           </div>
