@@ -48,12 +48,14 @@ class Reservation extends CI_Controller {
 			$viewdata['room_types'] = $room_types;
 			$this->load->view('reservation/add',$viewdata);
 		} else {
+			$reservation_types = $this->reservation_m->get_reservation_types();
+			$viewdata['reservation_types'] = $reservation_types;
 			$viewdata['rooms'] = $rooms;
 			$viewdata['customer_TCno'] = $post['customer_TCno'];
 			$viewdata['checkin_date'] = $post['checkin_date'];
 			$viewdata['checkout_date'] = $post['checkout_date'];
 			$viewdata['room_type'] = $post['room_type'];
-			$viewdata['reservation_types'] = $post['reservation_types'];
+			//$viewdata['reservation_type'] = $post['reservation_type'];
 			// echo "<pre>";
 			// var_dump($viewdata);return;echo "</pre>";
 			$this->load->view('reservation/list',$viewdata);
