@@ -35,12 +35,15 @@ class Reservation extends CI_Controller {
 		if(!$customer) {
 			$viewdata['error'] = "Customer does not exist";
 		} else {
+//			$reservation = $this->reservation_m->get_reservation_types();
 			$rooms = $this->reservation_m->get_available_rooms($post['room_type'], $post['checkin_date'], $post['checkout_date']);
 			if(!$rooms) {
 				$viewdata['error'] = "No available rooms";
 			}
 		}
 		if(isset($viewdata['error'])){
+			$reservation_types = $this->reservation_m->get_reservation_types();
+			$viewdata['reservation_types'] = $reservation_types;
 			$room_types = $this->room_m->get_room_types();
 			$viewdata['room_types'] = $room_types;
 			$this->load->view('reservation/add',$viewdata);
@@ -50,6 +53,7 @@ class Reservation extends CI_Controller {
 			$viewdata['checkin_date'] = $post['checkin_date'];
 			$viewdata['checkout_date'] = $post['checkout_date'];
 			$viewdata['room_type'] = $post['room_type'];
+			$viewdata['reservation_types'] = $post['reservation_types'];
 			// echo "<pre>";
 			// var_dump($viewdata);return;echo "</pre>";
 			$this->load->view('reservation/list',$viewdata);
@@ -62,8 +66,11 @@ class Reservation extends CI_Controller {
 	{
 		$this->check_login();
 
+		$reservation_types = $this->reservation_m->get_reservation_types();
+		// $viewdata = array();
 		$room_types = $this->room_m->get_room_types();
-		$viewdata = array('room_types' => $room_types);
+		$viewdata = array('room_types' => $room_types, 'reservation_types' => $reservation_types);
+
 		$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation');
 		$this->load->view('header', $data);
 		$this->load->view('reservation/add', $viewdata);
@@ -78,6 +85,7 @@ class Reservation extends CI_Controller {
 		$viewdata = array();
 		$data = array();
 		$data['customer_id'] = $customer->customer_id;
+
 		$data['room_id'] = $post['room_id'];
 		$data['checkin_date'] = $post['checkin_date'];
 		$data['checkout_date'] = $post['checkout_date'];
@@ -92,7 +100,8 @@ class Reservation extends CI_Controller {
 			$this->room_m->add_room_sale($data, $date_s);
 			$viewdata['success'] = 'Reservation successfully made';
 		}
-
+		$reservation_types = $this->reservation_m->get_reservation_types();
+		$viewdata['reservation_types'] = $reservation_types;
 		$room_types = $this->room_m->get_room_types();
 		$viewdata['room_types'] = $room_types;
 
