@@ -100,7 +100,7 @@ class Reservation extends CI_Controller {
 			$this->room_m->add_room_sale($data, $date_s);
 			$viewdata['success'] = 'Reservation successfully made';
 		}
-		$reservation_types = $this->reservation_m->get_reservation_types();
+		$reservation_types = $this->reservation_m->get_reservation_types();	//i added
 		$viewdata['reservation_types'] = $reservation_types;
 		$room_types = $this->room_m->get_room_types();
 		$viewdata['room_types'] = $room_types;
