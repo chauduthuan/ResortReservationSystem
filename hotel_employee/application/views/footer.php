@@ -2,33 +2,33 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; 2013 <a href="http://hotel.cihadoge.com/">DB Hotel Management System</a>. <span class="pull-right">Fadime Tugba DOGAN - Cihad OGE - Furkan Mustafa AKDEMIR</span> </div>
-        <!-- /span12 --> 
+        <div class="span12"> &copy; 2017 <a href="http://hotel.cihadoge.com/">Borrego Springs Resort</a> <span class="pull-right">Resort Reservation System</span> </div>
+        <!-- /span12 -->
       </div>
-      <!-- /row --> 
+      <!-- /row -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /footer-inner --> 
+  <!-- /footer-inner -->
 </div>
-<!-- /footer --> 
+<!-- /footer -->
 <!-- Le javascript
-================================================== --> 
-<!-- Placed at the end of the document so the pages load faster --> 
-<script src="<?php echo base_url(); ?>js/jquery-1.7.2.min.js"></script> 
-<script src="<?php echo base_url(); ?>js/excanvas.min.js"></script> 
-<script src="<?php echo base_url(); ?>js/chart.min.js" type="text/javascript"></script> 
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<?php echo base_url(); ?>js/jquery-1.7.2.min.js"></script>
+<script src="<?php echo base_url(); ?>js/excanvas.min.js"></script>
+<script src="<?php echo base_url(); ?>js/chart.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>js/full-calendar/fullcalendar.min.js"></script>
- 
-<script src="<?php echo base_url(); ?>js/base.js"></script> 
+
+<script src="<?php echo base_url(); ?>js/base.js"></script>
 
 <?
 if($page == "reservation" ) {
 ?>
 <script type="text/javascript">
   function date2str(date) {
-    var d = date.getDate(); 
+    var d = date.getDate();
     var m = date.getMonth()+1;
     var y = date.getFullYear();
     if(d<10)d='0'+d;
@@ -83,7 +83,7 @@ if($page == "reservation" ) {
 </script>
 <? } else if($page == "dashboard") { ?>
 
-<script>     
+<script>
   // init calendar
   $(document).ready(function() {
     var date = new Date();
@@ -173,7 +173,7 @@ if($page == "reservation" ) {
         }
       ]
 
-        }    
+        }
 
     </script><!-- /Calendar -->
     <!-- Welcome Guide -->
@@ -184,14 +184,14 @@ if($page == "reservation" ) {
 
     <script>
     $(function () {
-      
+
       guidely.add ({
         attachTo: '#target-1'
         , anchor: 'top-left'
         , title: 'Today \'s Stats'
         , text: 'You can see how many services are registered today. We used stored procedure here.'
       });
-      
+
       guidely.add ({
         attachTo: '#target-2'
         , anchor: 'top-left'
@@ -205,15 +205,15 @@ if($page == "reservation" ) {
         , title: 'Most Favorite Customer'
         , text: 'Here, you can see the customer who spend most money to our hotel. We used MAX, SUM, GROUP BY functions on our database.'
       });
-      
-      
+
+
       guidely.add ({
         attachTo: '#target-4'
         , anchor: 'top-left'
         , title: 'Most Frequent Customers'
         , text: 'Here, you can see most visited customers. We used GROUP BY, ORDER functions here.'
       });
-      
+
       guidely.init ({ welcome: true, startTrigger: true });
 
 

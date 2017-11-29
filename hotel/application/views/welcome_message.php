@@ -5,16 +5,29 @@
         <div class="span6">
           <div class="widget widget-nopad" id="target-1">
             <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3> Promotional Events</h3>
+              <h3>Announcements</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
               <div class="widget big-stats-container">
                 <div class="widget-content">
                   <h6 class="bigstats"> What's happening this month? </h6>
-                  
+                  <b> 10/28/2017: Resort Renovation </b>
+                  <br><span>Dear Valued Guest,</span>
+                  <br><br>
+                  <span>Please be advised that our sports facility and medical services area will be closed for
+                    renovations starting November, 2017 for approximately two months.We am thrilled to
+                    announce that our highly anticipated interior renovation has begun, with the expected
+                    completion date of January, 2018. While our resort remains a preferred choice of many
+                    families and business travellers alike, these extensive renovations will allow us to provide
+                    the very best resort experience to our valued clients. During the renovation period, we
+                    apologize for any inconvenience and offer our sincere thanks for your patience and support.
+                    If you have any concerns, please email us at borrego_springs_resort@gmail.com.
+                  </span> <br><br>
+                    <span>With thanks,</span> <br><br>
+                    <span>Steven Duong, Manager </span> <br> <span>Borrego Springs Resort</span>
                 </div>
-                <!-- /widget-content --> 
+                <!-- /widget-content -->
                 <!DOCTYPE html>
 <html>
 <head>
@@ -89,9 +102,11 @@ body {font-family: Verdana,sans-serif;margin:0}
   transition: background-color 0.6s ease;
 }
 
+/*
 .active, .dot:hover {
   background-color: #717171;
 }
+*/
 
 /* Fading animation */
 .fade {
@@ -101,14 +116,16 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
+
+
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
@@ -116,91 +133,25 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 </style>
 </head>
-<body>
 
-<div class="slideshow-container">
-
-<div class="mySlides">
-  <div class="numbertext">1 / 3</div>
-  <img src="https://i1.wp.com/food.theplainjane.com/wp-content/uploads/2014/10/sloths-borrego-springs-sculptures.jpg" 
-  style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides">
-  <div class="numbertext">2 / 3</div>
-  <img src="https://photos.smugmug.com/SanDiego-1/Anza-Borrego-Desert/i-dcdbwSB/0/266d1014/L/Borrego%20Springs%2C%20View%20of%20Serpent%20with%20Photographer-L.jpg"
-   style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides">
-  <div class="numbertext">3 / 3</div>
-  <img src="http://www.scga.org/images/uploads/facilities/1758/borrego_springs3__large.jpg" 
-  style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
-
-</body>
-</html> 
+</html>
               </div>
             </div>
           </div>
-          
+
           <!-- /widget -->
           <div class="widget widget-nopad">
             <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3> Calendar</h3>
+              <h3>Special Promotions</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-              <div id='calendar'>
-              </div>
+              <b> Super Savings! </b><i>20% off on Thanksgiving weekend from 11/27/2017 - 11/26/2017 </i>
+
             </div>
-            <!-- /widget-content --> 
+            <!-- /widget-content -->
           </div>
-          
+
         </div>
         <!-- /span6 -->
         <div class="span6">
@@ -211,35 +162,104 @@ function showSlides(n) {
             <!-- /widget-header -->
             <div class="widget-content">
               <div class="shortcuts">
+                  <!--
                   <a href="<?php echo base_url(); ?>login/logout" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Rooms</span> </a>
-                
+                  -->
                 <?
                   if(!UID)
                   { ?>
                     <a href="<?php echo base_url(); ?>login" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Login</span> </a>
+                    <a href="<?php echo base_url(); ?>register/" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Register</span> </a>
                 <?}
-                  elseif (UID) 
+                  elseif (UID)
                   { ?>
                     <a href="<?php echo base_url(); ?>login/logout" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Logout</span> </a>
                 <?} ?>
-                <a href="<?php echo base_url(); ?>register/" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Register</span> </a>
+
 
                 <!--<a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a>-->
               </div>
-              <!-- /shortcuts --> 
+              <!-- /shortcuts -->
             </div>
-            <!-- /widget-content --> 
+            <!-- /widget-content -->
           </div>
-          
-          
-          
+
+
+          <body>
+
+          <div class="slideshow-container">
+
+          <div class="mySlides">
+            <div class="numbertext">1 / 3</div>
+            <img src="img/sampleResortLogo.png"
+            style="width:100%; height: 400px">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/resort_pic1.png"
+             style="width:100%; height: 400px">
+            <div class="text">Look at the view!</div>
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/desert-flowers-in-anza-borrego.jpg"
+            style="width:100%; height: 400px">
+            <div class="text">Desert flowers in the spring</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          </div>
+          <br>
+
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+
+          <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+          }
+          </script>
+
+          </body>
+
+
         </div>
-        <!-- /span6 --> 
+        <!-- /span6 -->
       </div>
-      <!-- /row --> 
+      <!-- /row -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /main-inner --> 
+  <!-- /main-inner -->
 </div>
 <!-- /main -->
