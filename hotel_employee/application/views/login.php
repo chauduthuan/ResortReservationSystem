@@ -4,7 +4,7 @@
 
 		<form action="<?php echo base_url(); ?>login" method="post">
 
-			<h1>Employee Login</h1>		
+			<h1>Employee Login</h1>
 
 			<div class="login-fields">
 				<?
@@ -49,4 +49,6 @@
 
 <div class="login-extra">
 	<a href="/forget">Reset Password</a>
+	<a>&emsp;</a>
+	<a href="/hotel/login">Customer?</a>
 </div> <!-- /login-extra -->
