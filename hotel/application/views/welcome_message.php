@@ -89,9 +89,11 @@ body {font-family: Verdana,sans-serif;margin:0}
   transition: background-color 0.6s ease;
 }
 
+/*
 .active, .dot:hover {
   background-color: #717171;
 }
+*/
 
 /* Fading animation */
 .fade {
