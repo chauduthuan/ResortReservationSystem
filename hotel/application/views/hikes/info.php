@@ -98,12 +98,12 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -119,7 +119,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides">
   <div class="numbertext">1 / 3</div>
-  <img src="https://i1.wp.com/food.theplainjane.com/wp-content/uploads/2014/10/sloths-borrego-springs-sculptures.jpg" 
+  <img src="https://i1.wp.com/food.theplainjane.com/wp-content/uploads/2014/10/sloths-borrego-springs-sculptures.jpg"
   style="width:100%">
   <div class="text">Dinosaur Trail</div>
 </div>
@@ -133,7 +133,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides">
   <div class="numbertext">3 / 3</div>
-  <img src="https://hikinglibrarian.files.wordpress.com/2012/02/whalepeak01.jpg" 
+  <img src="https://hikinglibrarian.files.wordpress.com/2012/02/whalepeak01.jpg"
   style="width:100%">
   <div class="text">Anza-Borrego State Park</div>
 </div>
@@ -145,9 +145,9 @@ body {font-family: Verdana,sans-serif;margin:0}
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
 <script>
@@ -166,33 +166,38 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+      slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
 </script>
 
 </body>
-</html> 
+</html>
+<div class="slideshow-container">
 
                  				<h2 class="bigstats" style="margin: 20px 50px">  Here are all types of equipment you can rent:</h2>
                  					<h3><center> Hike Package $50</center></h3>
-                 					<img src="http://www.justicepriest.com/wp-content/uploads/2016/10/hiking-equipment-hirzlweg.jpg" style="width:100%">
-                 					<h3><center> Bike Package $75</center></h3>
-                 					<img src="https://bikesreviewed.com/wp-content/uploads/2017/07/Hiking-Bike.jpg" style="width:100%">
-                 				
+                 					<img src="http://www.justicepriest.com/wp-content/uploads/2016/10/hiking-equipment-hirzlweg.jpg" style="width:100%; max-height:540px">
+
+                          <br> <br> <br>
+
+                          <h3><center> Bike Package $75</center></h3>
+                 					<img src="https://bikesreviewed.com/wp-content/uploads/2017/07/Hiking-Bike.jpg" style="width:100%; max-height:540px">
+
                  			</div>
                  		</div>
                  	</div>
                 </div>
                 <!-- widget-content -->
+              </div>
       		</div>
   		</div>
   	</div>
