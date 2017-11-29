@@ -39,9 +39,9 @@ body {font-family: Verdana,sans-serif;margin:0}
 
                           <br> <br> <br>
                         </div>
-                 				<h6 class="bigstats" style="font-size:20px">  Here is the menu:</h6>
+                 				<h6 class="bigstats" style="font-size:20px;">  Here is the menu:</h6>
                         <div class="slideshow-container" style="font-size:18px">
-                 				<img src="https://marketplace.canva.com/MACGLf7yGK0/2/0/thumbnail_large/canva-violet-and-gold-elegant-fancy-menu-MACGLf7yGK0.jpg" style="width:100%; max-height:540px">
+                 				<img src="https://marketplace.canva.com/MACGLf7yGK0/2/0/thumbnail_large/canva-violet-and-gold-elegant-fancy-menu-MACGLf7yGK0.jpg" style="width:60%; max-height:1000px; display:block; margin: 0 auto; center;">
                  				</div>
 
                  			</div>
