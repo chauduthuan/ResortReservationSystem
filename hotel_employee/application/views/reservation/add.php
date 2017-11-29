@@ -31,18 +31,7 @@
           <input type="text" id="customer_TCno" name="customer_TCno" required value="" placeholder="Customer ID no"/>
         </div> <!-- /field -->
 
-        <div class="field">
-          <label for="reservation_type">Reservation Type:</label>
-          <select id="reservation_type" name="reservation_type" >
-            <?
-              foreach ($reservation_types as $k=>$rt) {
-                ?>
-                <option value="<?=$rt->reservation_type?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->rType_name?></option>
-                <?
-              }
-            ?>
-          </select>
-        </div> <!-- /field -->
+        
 
         <div class="field">
           <label for="room_type">Room Type:</label>
