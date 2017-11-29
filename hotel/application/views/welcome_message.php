@@ -213,18 +213,20 @@ function showSlides(n) {
             <!-- /widget-header -->
             <div class="widget-content">
               <div class="shortcuts">
+                  <!--
                   <a href="<?php echo base_url(); ?>login/logout" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Rooms</span> </a>
-                
+                  -->
                 <?
                   if(!UID)
                   { ?>
                     <a href="<?php echo base_url(); ?>login" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Login</span> </a>
+                    <a href="<?php echo base_url(); ?>register/" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Register</span> </a>
                 <?}
                   elseif (UID) 
                   { ?>
                     <a href="<?php echo base_url(); ?>login/logout" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Logout</span> </a>
                 <?} ?>
-                <a href="<?php echo base_url(); ?>register/" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Register</span> </a>
+
 
                 <!--<a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a>-->
               </div>
