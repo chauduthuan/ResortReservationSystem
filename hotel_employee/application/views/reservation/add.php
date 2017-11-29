@@ -35,9 +35,9 @@
           <label for="reservation_type">Reservation Type:</label>
           <select id="reservation_type" name="reservation_type" >
             <?
-              foreach ($reservation_type as $k=>$rt) {
+              foreach ($reservation_types as $k=>$rt) {
                 ?>
-                <option value="<?=$rt->reservation_type?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->reservation_type?></option>
+                <option value="<?=$rt->reservation_type?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->rType_name?></option>
                 <?
               }
             ?>
