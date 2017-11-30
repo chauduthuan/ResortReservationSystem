@@ -10,7 +10,7 @@ class customer_dashboard_m extends CI_Model {
     
     function get_reservation_order() {
 
-    	$query = $this->db->query("SELECT * FROM reservation WHERE customer_id IN (SELECT customer_id FROM customer WHERE customer_email = '".  UID  ."')");
+    	$query = $this->db->query("SELECT * FROM reservation WHERE customer_id IN (SELECT customer_id FROM customer WHERE customer_email = '".  UID  ."' AND checkout_date > (SELECT CURDATE())) ORDER BY checkin_date asc, room_id asc");
 
         $data = array();
         

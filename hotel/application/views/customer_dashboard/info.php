@@ -68,7 +68,7 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-					          <th> Room Type </th>
+					          <th> Room No. </th>
                     <th> Order Date </th>
                     <th> Check-In Date </th>
 					          <th> Check-Out Date </th>
