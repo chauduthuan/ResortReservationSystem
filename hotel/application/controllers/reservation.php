@@ -7,10 +7,10 @@ class Reservation extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -22,17 +22,17 @@ class Reservation extends CI_Controller {
 	{
 		if(!UID)
 			redirect("login");
-	} 
+	}
 
 	public function check($ref="") {
 		$post = $this->input->post();
 
-		echo("<script>console.log('post(): ".json_encode($post)."');</script>");	
+		//echo("<script>console.log('post(): ".json_encode($post)."');</script>");
 
-		echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
+		//echo("<script>console.log('session data: ".json_encode($this->session->userdata('useSessionData'))."');</script>");
 		if($this->session->userdata('useSessionData') == true)
 		{
-			echo("<script>console.log('useSessionData == true');</script>");
+			//echo("<script>console.log('useSessionData == true');</script>");
 			$post['room_type'] = $this->session->userdata('room_type');
 			$post['room_id'] = $this->session->userdata('room_id');
 			$post['checkin_date'] = $this->session->userdata('checkin_date');
@@ -53,7 +53,7 @@ class Reservation extends CI_Controller {
 		}
 		else
 		{
-			$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation'); 	
+			$data = array('title' => 'Add Customer - DB Hotel Management System', 'page' => 'reservation');
 		}
 		$this->load->view('header', $data);
 
@@ -69,10 +69,15 @@ class Reservation extends CI_Controller {
 		if(isset($viewdata['error'])){
 			$room_types = $this->room_m->get_room_types();
 			$viewdata['room_types'] = $room_types;
+			$reservation_types = $this->reservation_m->get_reservation_types();
+			$viewdata['reservation_types'] = $reservation_types;
 			$this->load->view('reservation/add',$viewdata);
 		} else {
 			$viewdata['rooms'] = $rooms;
 			//$viewdata['customer_TCno'] = $post['customer_TCno'];
+			$reservation_types = $this->reservation_m->get_reservation_types();
+			$viewdata['reservation_types'] = $reservation_types;
+
 			$viewdata['checkin_date'] = $post['checkin_date'];
 			$viewdata['checkout_date'] = $post['checkout_date'];
 			$viewdata['room_type'] = $post['room_type'];
@@ -102,7 +107,7 @@ class Reservation extends CI_Controller {
 		}
 		else
 		{
-			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation'); 	
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation');
 		}
 		$this->load->view('header', $data);
 		$this->load->view('reservation/info', $viewdata);
@@ -162,7 +167,8 @@ class Reservation extends CI_Controller {
 				$this->room_m->add_room_sale($data, $date_s);
 				$viewdata['success'] = 'Reservation successfully made';
 			}
-
+			$reservation_types = $this->reservation_m->get_reservation_types();	//i added
+					$viewdata['reservation_types'] = $reservation_types;
 			$room_types = $this->room_m->get_room_types();
 			$viewdata['room_types'] = $room_types;
 
@@ -177,7 +183,7 @@ class Reservation extends CI_Controller {
 			}
 			else
 			{
-				$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation'); 	
+				$data = array('title' => 'Reservation - DB Hotel Management System', 'page' => 'reservation');
 			}
 			$this->load->view('header', $data);
 			$this->load->view('reservation/add', $viewdata);
@@ -217,7 +223,7 @@ class Reservation extends CI_Controller {
 		}
 		else
 		{
-			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation'); 	
+			$data = array('title' => 'Borrego Springs Resort', 'page' => 'reservation');
 		}
         $this->load->view('header', $data);
         $this->load->view('reservation/login', $viewdata);
