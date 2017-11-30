@@ -43,7 +43,11 @@
 					<?
 						foreach ($reservation_types as $k=>$rt) {
 					?>
-						<option value="<?=$rt->reservation_type?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->rType_name?></option>
+						<!--
+							Can be removed 
+							value="<?=$rt->rType_name?>" <? if($k==0) { echo "selected"; } ?>
+						-->
+						<option value="<?=$rt->rType_name?>" <? if($k==0) { echo "selected"; } ?>><?=$rt->rType_name?></option>
 					<?
 					}
 					?>
