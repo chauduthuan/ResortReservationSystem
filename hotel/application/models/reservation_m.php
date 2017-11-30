@@ -7,7 +7,7 @@ class Reservation_m extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
+
     function get_available_rooms($room_type, $checkin_date, $checkout_date)
     {
         $query = $this->db->query("CALL get_available_rooms('$room_type','$checkin_date','$checkout_date')");
@@ -30,4 +30,19 @@ class Reservation_m extends CI_Model {
         $query = $this->db->insert('reservation', $data);
 //        return $query->affected_rows();
     }
+
+    function get_reservation_types()
+    {
+        $query = $this->db->from('reservation_type')->get();
+        $data = array();
+
+        foreach (@$query->result() as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
+        return false;
+    }
+
 }

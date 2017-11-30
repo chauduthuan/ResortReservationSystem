@@ -146,7 +146,7 @@ body {font-family: Verdana,sans-serif;margin:0}
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-              <b> Super Savings! </b><i>20% off on Thanksgiving weekend from 11/27/2017 - 11/26/2017 </i>
+              <b> Super Savings! </b><i>20% off for the Holidays from 11/20/2017 - 1/20/2018 </i>
 
             </div>
             <!-- /widget-content -->
