@@ -53,6 +53,18 @@
 					?>
 					</select>
 				</div> <!-- /field -->
+
+				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="creditcard_number">Credit Card #:</label>
+					<input type="text" pattern= "[0-9]{16}" id="creditcard_number" name="creditcard_number" required value="" placeholder="Credit Card #"/>
+				</div> <!-- /field -->
+				
+				<div class="field">
+					<label for="cvv">CVV:</label>
+					<input type="text" pattern= "[0-9]{3}" id="cvv" name="cvv" required value="" placeholder="CVV"/>
+				</div> <!-- /field -->
 				
 			</div> <!-- /login-fields -->
 				<div class="row">
