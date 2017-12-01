@@ -62,7 +62,7 @@
       
       <div class="login-actions">
         
-        <button class="button btn btn-success btn-large">List Available</button>
+        <button class="button btn btn-success btn-large">Find Available Rooms</button>
         
       </div> <!-- .actions -->
       
