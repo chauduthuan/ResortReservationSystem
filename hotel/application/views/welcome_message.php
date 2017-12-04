@@ -16,7 +16,7 @@
                   <br><span>Dear Valued Guest,</span>
                   <br><br>
                   <span>Please be advised that our sports facility and medical services area will be closed for
-                    renovations starting November, 2017 for approximately two months.We am thrilled to
+                    renovations starting November, 2017 for approximately two months. We are thrilled to
                     announce that our highly anticipated interior renovation has begun, with the expected
                     completion date of January, 2018. While our resort remains a preferred choice of many
                     families and business travellers alike, these extensive renovations will allow us to provide
