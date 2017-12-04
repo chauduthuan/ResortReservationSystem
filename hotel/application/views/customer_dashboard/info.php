@@ -35,7 +35,9 @@
               </table>
             </div>
             <!-- /widget-content --> 
+
           </div>
+          <?/*
           <!-- /widget -->
           <div class="widget widget-nopad">
             <div class="widget-header"> <i class="icon-list-alt"></i>
@@ -48,6 +50,7 @@
             </div>
             <!-- /widget-content --> 
           </div>
+          */?>
 
         </div>
         <!-- /span6 -->
