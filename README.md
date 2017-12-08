@@ -2,6 +2,7 @@ SDSU CS532 Software Engineering
 Team: Resort Reservation System (RRS) 
 Members: Michael Yee, Tony La, Thuan Chau, Steven Duong, Ching Yi Lui, Alexander Giang, Shawn Chua
 
+PPT: https://docs.google.com/presentation/d/1-JWPMKZ7i7O6CivBwpi8uqav-121emF8c5t5RFZXqRE/edit?usp=sharing
 
 Borrego Springs Resort Installation Steps
 
