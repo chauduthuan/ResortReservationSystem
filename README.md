@@ -53,7 +53,8 @@ For employee, you can login with the following credentials:
 	password - ganesh
 
 	- Here, Employees can look at Customer information and make any changes accordingly.
-	![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/employeedash1.JPG)
+	
+![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/employeedash1.JPG)
 
 For Visitor, you can view a mock-up of what a landing page could be:
 	- Visitors can view the Rooms, Room Types, Restaraunt Info, and Hikes and Rental Info. 
