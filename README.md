@@ -32,6 +32,7 @@ Borrego Springs Resort Installation Steps
 	- Then, click on Admin for MySQL, which should redirect you to phpMyAdmin on your browser.
 	![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/XAMPP.JPG)
 	- Create a database with name 'hotel' on the left-hand side.
+	
 	![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/phpmyadmin.JPG)
 	- Import the first part of database by opening hotel_employee/Database/ folder and dragging 
 	the 'hotel.sql' file to your with phpMyAdmin open on your browser.
