@@ -41,10 +41,10 @@ Borrego Springs Resort Installation Steps
 	the hotel/ database that require the hotel_employee/ tables first.
 	
 4. Now, you can open your browser with the the following URLs:
-	Visitor/Customer: localhost/hotel
+	- Visitor/Customer: localhost/hotel
 	![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/LandingPage.JPG)
 	
-	Employee: localhost/hotel_employee
+	- Employee: localhost/hotel_employee
 	![alt text](https://github.com/chauduthuan/ResortReservationSystem/blob/master/readmepics/employeelogin.JPG)
 	
 For employee, you can login with the following credentials:
